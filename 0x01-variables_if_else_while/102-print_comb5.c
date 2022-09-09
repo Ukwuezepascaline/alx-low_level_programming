@@ -7,22 +7,21 @@
  */
 int main(void)
 {
-	int c, c_two, c_three;
+	int c, c_two;
 
-	for (c = 48; c <= 55; c++)
+	for (c = 0; c <= 98; c++)
 	{
-		for (c_two = c + 1; c_two <= 56; c_two++)
+		for (c_two = c + 1; c_two <= 99; c_two++)
 		{
-			for (c_three = c_two + 1; c_three <= 57; c_three++)
+			putchar('0' + c / 10);
+			putchar('0' + c % 10);
+			putchar(32);
+			putchar('0' + c_two / 10);
+			putchar('0' + c_two % 10);
+			if (c / 10 != 9 || c % 10 != 8)
 			{
-				putchar(c);
-				putchar(c_two);
-				putchar(c_three);
-				if (c != 55 || c_two != 56 || c_three != 57)
-				{
-					putchar(44);
-					putchar(32);
-				}
+				putchar(44);
+				putchar(32);
 			}
 		}
 	}
