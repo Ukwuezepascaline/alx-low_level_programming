@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * main - print putchar
- * Return: always 0
+ * main - Prints "Holberton" followed by a new line.
+ *
+ * Return: Always 0.
  */
-
 int main(void)
 {
 	putchar('');
@@ -18,5 +18,4 @@ int main(void)
 	_putchar('\n');
 
 	return (0);
-
 }
