@@ -1,16 +1,21 @@
 #include "main.h"
 
 /**
-* add - a function that adds two integers
-* and returns the result.
+* print_alphabet_x10 - Prints the alphabet 10 times.
 *
-* @a: number one.
-* @b: number two.
-*
-* Return: Add of number one and number two.
+* Return: Always 0
 */
 
-int add(int a, int b)
+void print_alphabet_x10(void)
 {
-	return (a + b);
+	int i, j;
+
+	for (i = 0; i <= 9; i++)
+	{
+		for (j = 97; j <= 122; j++)
+		{
+			_putchar(j);
+		}
+			_putchar('\n');
+	}
 }
