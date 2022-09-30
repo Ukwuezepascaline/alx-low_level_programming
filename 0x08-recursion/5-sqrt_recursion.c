@@ -1,4 +1,3 @@
-
 #include "main.h"
 
 int find_sqrt(int num, int root);
