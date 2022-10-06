@@ -1,48 +1,32 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
- * _strlen - Finds the length of a string.
- * @str: The string to be measured.
+ * _realloc - reallocates a memory block.
+ * @ptr: pointer to the memory previously allocated.
+ * @old_size: size, in bytes, of the allocated space of ptr.
+ * @new_size: new size, in bytes, of the new memory block.
  *
- * Return: The length of the string.
+ * Return: ptr
+ * if new_size == old_size, returns ptr without changes.
+ * if malloc fails, returns NULL.
  */
-int _strlen(char *str)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	int i;
-
-	for(i = 0; str[i]; i++)
-		;
-
-	return (i);
-}
-/**
- * main - multiplies two positive numbers
- * @argc: number of arguments
- * @argv: array of arguments
- *
- * Return: always 0 (Success)
- */
-int main(int argc, char *argv[])
-{
-	unsigned long int a, b, res; 
-	
-	int len_a, len_b;
-
-	len_a = _strlen(argv[1]);
-	len_b = _strlen(argv[2]);
-
-	for (i = 0; i < )
-
-	if (argc != 3)
+	if (new_size == 0 && ptr != NULL)
 	{
-		printf("Error\n");
-		return (98);
+		free(ptr);
+		return (NULL);
 	}
-	a = atoi(argv[1]);
-	b = atoi(argv[2]);
 
-	res = mul(a, b);
-	printf("%d", res);
+	if (ptr == NULL)
+		ptr = malloc(new_size);
+
+	if (new_size == old_size)
+		return (ptr);
+
+	free(ptr);
+	ptr = malloc(new_size);
+
+	return (ptr);
 }
