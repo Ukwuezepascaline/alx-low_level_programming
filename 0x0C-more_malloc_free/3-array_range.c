@@ -29,4 +29,4 @@ int *array_range(int min, int max)
 		array[i] = j;
 
 	return (array);
-}	
+}
