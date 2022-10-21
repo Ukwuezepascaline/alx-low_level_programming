@@ -1,13 +1,25 @@
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
-
-void _attribute_((constructor)) hare(void);
+#include "lists.h"
 
 /**
- * hare - Prints a string before the
- *        main function is executed.
+ * main - check the code
+ *
+ * Return: Always 0.
  */
-void hare(void)
+int main(void)
 {
-	printf("You're beat! and yet, you must allow,\n"
-	       "I bore my house upon my back!\n");
+    list_t *head;
+
+    head = NULL;
+    add_node_end(&head, "Bob");
+    add_node_end(&head, "&");
+    add_node_end(&head, "Kris");
+    add_node_end(&head, "love");
+    add_node_end(&head, "asm");
+    print_list(head);
+    free_list(head);
+    head = NULL;
+    return (0);
 }
